@@ -13,9 +13,9 @@
                 <a href="{{route('login')}}" class="navbar-item is-tab">Login</a>
                 <a href="{{route('register')}}" class="navbar-item is-tab">Join the Community</a>
             @else
-                <div class="navbar-item has-dropdown is-active">
+                <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
-                        Hi Boris
+                        Hey {{ Auth::user()->name }}
                     </a>
 
                     <div class="navbar-dropdown">
@@ -27,9 +27,9 @@
                             <span class="icon"><i class="fa fa-fw fa-bell"></i></span>
                             Notifications
                         </a>
-                        <a class="navbar-item">
+                        <a class="navbar-item" href="{{route('manage.dashboard')}}">
                             <span class="icon"><i class="fa fa-fw fa-cog"></i></span>
-                            Settings
+                            Manage
                         </a>
                         <hr class="navbar-divider">
                         <a class="navbar-item">
