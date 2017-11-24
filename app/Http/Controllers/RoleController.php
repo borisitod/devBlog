@@ -41,7 +41,7 @@ class RoleController extends Controller
     {
         $this->validate($request, [
             'display_name' => 'required|max:255',
-            'name' => 'required|max:100|alpha_dash|unique:permissions,name',
+            'name' => 'required|max:100|alpha_dash|unique:unique:role,name',
             'description' => 'sometimes|max:255'
         ]);
 
@@ -103,8 +103,12 @@ class RoleController extends Controller
         $role->description = $request->description;
         $role->save();
 
-        if ($request->permissions) {
+        if (isset($request->permissions) && !empty($request->permissions)) {
+
             $role->syncPermissions(explode(',', $request->permissions));
+        } else {
+            $request->permissions = [];
+            $role->syncPermissions($request->permissions);
         }
 
         Session::flash('success', 'Successfully update the '. $role->display_name . ' role in the database.');
