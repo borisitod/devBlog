@@ -963,7 +963,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(10);
-module.exports = __webpack_require__(37);
+module.exports = __webpack_require__(38);
 
 
 /***/ }),
@@ -989,7 +989,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a);
 //     data: {}
 // })
 
-__webpack_require__(47);
+__webpack_require__(37);
 
 /***/ }),
 /* 11 */
@@ -30005,24 +30005,16 @@ exports.clearImmediate = clearImmediate;
 /* 37 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 38 */,
-/* 39 */,
-/* 40 */,
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */
-/***/ (function(module, exports) {
-
 var accordions = document.getElementsByClassName('has-submenu');
 
 for (var i = 0; i < accordions.length; i++) {
+    if (accordions[i].classList.contains('is-active')) {
+        var submenu = accordions[i].nextElementSibling;
+        submenu.style.maxHeight = submenu.scrollHeight + "px";
+        submenu.style.marginTop = "0.75em";
+        submenu.style.marginBottom = "0.75em";
+    }
+
     accordions[i].onclick = function () {
         this.classList.toggle('is-active');
 
@@ -30040,6 +30032,12 @@ for (var i = 0; i < accordions.length; i++) {
         }
     };
 }
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
