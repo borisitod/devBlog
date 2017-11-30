@@ -15,13 +15,18 @@ a.is-muted:hover {
  ****** Nav Overrides *****
  ***************************/
 
-.navbar {
-  height: 4.5rem;
-}
-
-.navbar-item img {
+.nav-item img {
   max-height: 2.8rem;
 }
 
+.nav {
+  height: 4.5rem;
+}
+.navbar-brand .brand-item {
+  margin-right: 0px;
+  @include desktop {
+    margin-right: 15px;
+  }
+}
 
 
