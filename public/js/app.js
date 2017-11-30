@@ -30006,12 +30006,18 @@ exports.clearImmediate = clearImmediate;
 /***/ (function(module, exports) {
 
 var accordions = document.getElementsByClassName('has-submenu');
+var adminSlideButton = document.getElementById('admin-slideout-button');
 
 function setSubmenuStyles(submenu, maxHeight, margins) {
     submenu.style.maxHeight = maxHeight;
     submenu.style.marginTop = margins;
     submenu.style.marginBottom = margins;
 }
+
+adminSlideButton.onclick = function () {
+    this.classList.toggle('is-active');
+    document.getElementById('admin-side-menu').classList.toggle('is-active');
+};
 
 for (var i = 0; i < accordions.length; i++) {
     if (accordions[i].classList.contains('is-active')) {
