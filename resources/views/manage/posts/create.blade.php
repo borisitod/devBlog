@@ -46,7 +46,11 @@
                         <div class="post-status-widget widget-area">
                             <div class="status">
                                 <div class="status-icon">
-                                    <b-icon icon="assignment" size="is-medium"></b-icon>
+                                    <b-icon
+                                            pack="fa"
+                                            icon="file-text"
+                                            size="is-medium">
+                                    </b-icon>
                                 </div>
                                 <div class="status-details">
                                     <h4><span class="status-emphasis">Draft</span> Saved</h4>
