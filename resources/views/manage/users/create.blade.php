@@ -8,7 +8,6 @@
             </div>
         </div>
         <hr class="m-t-0">
-
         <form action="{{route('users.store')}}" method="POST">
             {{csrf_field()}}
             <div class="columns">
@@ -35,26 +34,25 @@
                         </p>
                     </div>
                 </div> <!-- end of .column -->
-            </div>
 
-            <div class="column">
-                <label for="roles" class="label">Roles:</label>
-                <input type="hidden" name="roles" :value="rolesSelected"/>
+                <div class="column">
+                    <label for="roles" class="label">Roles:</label>
+                    <input type="hidden" name="roles" :value="rolesSelected" />
 
-                @foreach ($roles as $role)
-                    <div class="field">
-                        <b-checkbox v-model="rolesSelected"
-                                    :native-value="{{$role->id}}">{{$role->display_name}}</b-checkbox>
-                    </div>
-                @endforeach
+                    @foreach ($roles as $role)
+                        <div class="field">
+                            <b-checkbox v-model="rolesSelected" :native-value="{{$role->id}}">{{$role->display_name}}</b-checkbox>
+                        </div>
+                    @endforeach
+                </div>
+            </div> <!-- end of .columns for forms -->
+            <div class="columns">
+                <div class="column">
+                    <hr />
+                    <button class="button is-primary is-pulled-right" style="width: 250px;">Create New User</button>
+                </div>
             </div>
         </form>
-        <div class="columns">
-            <div class="column">
-                <hr/>
-                <button class="button is-primary is-pulled-right" style="width: 250px;">Create New User</button>
-            </div>
-        </div>
     </div> <!-- end of .flex-container -->
 @endsection
 
