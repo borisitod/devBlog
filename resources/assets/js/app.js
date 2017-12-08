@@ -8,7 +8,7 @@ import Buefy from 'buefy';
 
 
 Vue.use(Buefy);
-Vue.component('slugWidget', require('./components/slugWidget.vue'));
+Vue.component('slug-widget', require('./components/slugWidget.vue'));
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
